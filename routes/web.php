@@ -6,6 +6,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/logout','Auth\LoginController@logout')->name('logout');
+
 Route::get('/minerals', 'MineralController@index')->name('mineral.index');
 
 Route::get('/minerals/add', 'MineralController@create')->name('mineral.create');
@@ -23,3 +25,9 @@ Route::get('/minerals/{mineral}', 'MineralController@show')->name('mineral.show'
 Route::post('/search', 'ChemicalElementController@number')->name('chemical.number');
 
 Route::post('/searchResult', 'ChemicalElementController@search')->name('chemical.search');
+
+Route::get('/profile', 'UserController@index')->name('user.profile');
+
+Route::put('/profile/result', 'UserController@update')->name('user.update');
+
+Route::post('/profile/avatar', 'AvatarController@upload')->name('avatar.upload');

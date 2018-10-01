@@ -51,7 +51,6 @@ class MineralController extends Controller
         $mineralClasses = MineralClass::query()->get();
         $currentMineralClass = $request->get('min_class_id');
         return view('mineral.form', compact('mineral', 'mineralClasses', 'currentMineralClass'));
-//        return view('mineral.form', compact('mineral'));
     }
 
     public function update(AddMineralRequest $request, Mineral $mineral)

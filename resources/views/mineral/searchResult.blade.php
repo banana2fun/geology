@@ -19,7 +19,7 @@
             <tr>
                 <td scope="col">{{$mineral->ru_name}}</td>
                 @php
-                $delt = 0;
+                    $delt = 0;
                 @endphp
                 @foreach($mineral->elements as $element)
                     <td scope="col">{{$element->pivot->percent_in_mineral}} </td>
@@ -29,6 +29,16 @@
                     @endphp
                 @endforeach
                 <td scope="col">{{$delt}}</td>
+                @if (Route::has('login'))
+                    @auth
+                        <td scope="col">
+                            <form method="post" action="{{route('mineral.update', $mineral)}}">
+                                <input type="hidden" value="{{$mineral->ru_name}}">
+                                <button type="submit" class="btn btn-primary">Сохранить</button>
+                            </form>
+                        </td>
+                    @endauth
+                @endif
             </tr>
         @endforeach
         </tbody>

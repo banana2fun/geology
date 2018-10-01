@@ -17,7 +17,14 @@
             ])
             @if (Route::has('login'))
                 @auth
-
+                    @include('navbarItem', [
+                     'label' => 'Профиль',
+                     'name' => 'user.profile',
+                     ])
+                    @include('navbarItem', [
+                     'label' => 'Выйти',
+                     'name' => 'logout',
+                     ])
                 @else
                     @include('navbarItem', [
             'label' => 'Войти',

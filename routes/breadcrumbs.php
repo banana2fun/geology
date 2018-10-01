@@ -31,3 +31,7 @@ Breadcrumbs::for('chemical.number', function (BreadcrumbsGenerator $trail) {
     $trail->parent('welcome');
     $trail->push('Поиск по элементам', route('chemical.number'));
 });
+
+Breadcrumbs::for('user.profile', function (BreadcrumbsGenerator $trail) {
+    $trail->push('Профиль', route('user.profile'));
+});
