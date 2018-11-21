@@ -15,7 +15,6 @@ class AddAllKey extends Migration
     {
         Schema::table('minerals', function (Blueprint $table) {
             $table->foreign('min_class_id')->references('id')->on('mineral_classes');
-
         });
 
         Schema::table('element_mineral', function (Blueprint $table) {

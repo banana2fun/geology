@@ -51,7 +51,7 @@ return [
         'photos' => [
             'driver' => 'local',
             'root' => public_path('avatar'),
-            'url' => '/avatar'
+            'url' => '/avatar',
         ],
 
         'public' => [
