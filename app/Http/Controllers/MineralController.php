@@ -7,10 +7,8 @@ use App\Mineral;
 use App\MineralClass;
 use Illuminate\Http\Request;
 
-
 class MineralController extends Controller
 {
-
     public function index(Request $request)
     {
         $query = Mineral::query();

@@ -21,10 +21,9 @@ class UserController extends Controller
     {
         $data = $request->toArray();
         $result = false;
-        if (Hash::check($data['old_password'], Auth::user()['password']))
-        {
+        if (Hash::check($data['old_password'], Auth::user()['password'])) {
             $request->user()->fill([
-                'password' => Hash::make($data['new_password'])
+                'password' => Hash::make($data['new_password']),
             ])->saveOrfail();
             $result = true;
         }
